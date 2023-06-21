@@ -1,0 +1,875 @@
+{
+"4931581372331883465" : {
+	"className": "GameObject",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "serializedVersion": 6,
+  "m_Component":[
+  {
+    "component": {"fileID": "4931581372331883470"}
+  }
+  ],
+  "m_Layer": 0,
+  "m_Name": "cabinet_screen",
+  "m_TagString": "Untagged",
+  "m_Icon": {"fileID": "0"},
+  "m_NavMeshLayer": 0,
+  "m_StaticEditorFlags": 4294967295,
+  "m_IsActive": 1
+},
+"4931581372331883470" : {
+	"className": "Transform",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4931581372331883465"},
+  "m_LocalRotation": {"x": -0,"y": -0,"z": -0,"w": 1},
+  "m_LocalPosition": {"x": -12.358501,"y": 2.3462753,"z": -11.264661},
+  "m_LocalScale": {"x": 1,"y": 1,"z": 1},
+  "m_Children":[    {"fileID": "4935660947345614778"},
+    {"fileID": "4935660948224663896"},
+    {"fileID": "4935660946712729720"},
+    {"fileID": "4935660948294834348"}
+    ],
+  "m_Father": {"fileID": "4931581373073051077"},
+  "m_RootOrder": 1,
+  "m_LocalEulerAnglesHint": {"x": 0,"y": 0,"z": 0}
+},
+"4931581372728095959" : {
+	"className": "GameObject",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "serializedVersion": 6,
+  "m_Component":[
+  {
+    "component": {"fileID": "4931581372728095956"}
+  }
+  ],
+  "m_Layer": 0,
+  "m_Name": "cabinet_light",
+  "m_TagString": "Untagged",
+  "m_Icon": {"fileID": "0"},
+  "m_NavMeshLayer": 0,
+  "m_StaticEditorFlags": 4294967295,
+  "m_IsActive": 1
+},
+"4931581372728095956" : {
+	"className": "Transform",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4931581372728095959"},
+  "m_LocalRotation": {"x": -0,"y": -0,"z": -0,"w": 1},
+  "m_LocalPosition": {"x": -12.358501,"y": 2.3462753,"z": -11.264661},
+  "m_LocalScale": {"x": 1,"y": 1,"z": 1},
+  "m_Children":[    {"fileID": "4935731012421853270"},
+    {"fileID": "4935731013428313863"},
+    {"fileID": "4935731012909552919"},
+    {"fileID": "4935731013440521076"}
+    ],
+  "m_Father": {"fileID": "4931581373073051077"},
+  "m_RootOrder": 2,
+  "m_LocalEulerAnglesHint": {"x": 0,"y": 0,"z": 0}
+},
+"4931581373035728795" : {
+	"className": "GameObject",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "serializedVersion": 6,
+  "m_Component":[
+  {
+    "component": {"fileID": "4931581373035728792"}
+  }
+  ],
+  "m_Layer": 0,
+  "m_Name": "Ac_Vent",
+  "m_TagString": "Untagged",
+  "m_Icon": {"fileID": "0"},
+  "m_NavMeshLayer": 0,
+  "m_StaticEditorFlags": 4294967295,
+  "m_IsActive": 1
+},
+"4931581373035728792" : {
+	"className": "Transform",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4931581373035728795"},
+  "m_LocalRotation": {"x": -0,"y": -0,"z": -0,"w": 1},
+  "m_LocalPosition": {"x": -19.90752,"y": 4.1793065,"z": -17.278616},
+  "m_LocalScale": {"x": 1,"y": 1,"z": 1},
+  "m_Children":[    {"fileID": "4935568474057966947"},
+    {"fileID": "4935746165451210709"},
+    {"fileID": "4927116743910262403"},
+    {"fileID": "4935816352476851494"}
+    ],
+  "m_Father": {"fileID": "4931581373073051077"},
+  "m_RootOrder": 0,
+  "m_LocalEulerAnglesHint": {"x": 0,"y": 0,"z": 0}
+},
+"4931581373073051079" : {
+	"className": "GameObject",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "serializedVersion": 6,
+  "m_Component":[
+  {
+    "component": {"fileID": "4931581373073051077"}
+  },
+  {
+    "component": {"fileID": "4931581373073051076"}
+  }
+  ],
+  "m_Layer": 0,
+  "m_Name": "Coridoor",
+  "m_TagString": "Untagged",
+  "m_Icon": {"fileID": "0"},
+  "m_NavMeshLayer": 0,
+  "m_StaticEditorFlags": 4294967295,
+  "m_IsActive": 1
+},
+"4931581373073051077" : {
+	"className": "Transform",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4931581373073051079"},
+  "m_LocalRotation": {"x": -0,"y": -0,"z": -0,"w": 1},
+  "m_LocalPosition": {"x": 20.941463,"y": 2.6191778,"z": -24.79793},
+  "m_LocalScale": {"x": 1,"y": 1,"z": 1},
+  "m_Children":[    {"fileID": "4931581373035728792"},
+    {"fileID": "4931581372331883470"},
+    {"fileID": "4931581372728095956"},
+    {"fileID": "4927431324894194085"},
+    {"fileID": "4927344626169486541"},
+    {"fileID": "5485758903756544343"},
+    {"fileID": "4935703265908714106"}
+    ],
+  "m_Father": {"fileID": "4931581373574315440"},
+  "m_RootOrder": 0,
+  "m_LocalEulerAnglesHint": {"x": 0,"y": 0,"z": 0}
+},
+"4931581373073051076" : {
+	"className": "Animator",
+  "serializedVersion": 3,
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4931581373073051079"},
+  "m_Enabled": 1,
+  "m_Avatar": {"fileID": "9000000","guid": "838264b26d34e734796776b3b1ea0e13","type": 3},
+  "m_Controller": {"fileID": "0"},
+  "m_CullingMode": 0,
+  "m_UpdateMode": 0,
+  "m_ApplyRootMotion": 0,
+  "m_LinearVelocityBlending": 0,
+  "m_WarningMessage":  null,
+  "m_HasTransformHierarchy": 1,
+  "m_AllowConstantClipSamplingOptimization": 1,
+  "m_KeepAnimatorControllerStateOnDisable": 0
+},
+"4931581373574315443" : {
+	"className": "GameObject",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "serializedVersion": 6,
+  "m_Component":[
+  {
+    "component": {"fileID": "4931581373574315440"}
+  }
+  ],
+  "m_Layer": 0,
+  "m_Name": "_______Interior",
+  "m_TagString": "Untagged",
+  "m_Icon": {"fileID": "0"},
+  "m_NavMeshLayer": 0,
+  "m_StaticEditorFlags": 0,
+  "m_IsActive": 1
+},
+"4931581373574315440" : {
+	"className": "Transform",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4931581373574315443"},
+  "m_LocalRotation": {"x": 0,"y": 0,"z": 0,"w": 1},
+  "m_LocalPosition": {"x": 48.828533,"y": 3.1908216,"z": 17.45793},
+  "m_LocalScale": {"x": 1,"y": 1,"z": 1},
+  "m_Children":[    {"fileID": "4931581373073051077"}
+    ],
+  "m_Father": {"fileID": "0"},
+  "m_RootOrder": 0,
+  "m_LocalEulerAnglesHint": {"x": 0,"y": 0,"z": 0}
+},
+"4694525288292637793" : {
+	"className": "PrefabInstance",
+  "guid": "dc96ef081ab64b14cb4ad252084aa14c",
+  "m_LocalPosition": {"x": -36.8042, "y" : 1.11068, "z" : -17.244 },
+  "m_LocalRotation": {"x": -0, "y" : 0.707107, "z" : -0, "w" : 0.707107 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"5485758903756544343 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 938746848521028918,"guid": "dc96ef081ab64b14cb4ad252084aa14c","type": 3},
+  "m_PrefabInstance": {"fileID": "4694525288292637793"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581371735301218" : {
+	"className": "PrefabInstance",
+  "guid": "92e24ff0239001f438c6f2091cd07517",
+  "m_LocalPosition": {"x": -14.2115, "y" : -1.7, "z" : -5.58534 },
+  "m_LocalRotation": {"x": -0, "y" : -1, "z" : -0, "w" : 0 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4933005861335193292 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1672979234327214,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581371735301218"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4935660948224663896 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4083974570097978,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581371735301218"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581371735301222" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933005861335193292"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300000","guid": "67e63a55756bbe145b69cb27521b4304","type": 3}
+},
+"4931581371891071960" : {
+	"className": "PrefabInstance",
+  "guid": "f2a4c48a7ba242747b3871c140f0d591",
+  "m_LocalPosition": {"x": -21.3415, "y" : -0.09, "z" : -2.86534 },
+  "m_LocalRotation": {"x": -0, "y" : -1, "z" : -0, "w" : 0 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935731013440521076 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4294786093709484,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581371891071960"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4933206755784744200 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1752935983441616,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581371891071960"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581371891071966" : {
+	"className": "Light",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933206755784744200"},
+  "m_Enabled": 1,
+  "serializedVersion": 10,
+  "m_Type": 2,
+  "m_Shape": 0,
+  "m_Color": {"r": 1,"g": 1,"b": 1,"a": 1},
+  "m_Intensity": 1,
+  "m_Range": 10,
+  "m_SpotAngle": 30,
+  "m_InnerSpotAngle": 21.80208,
+  "m_CookieSize": 10,
+  "m_Shadows":
+  {
+    "m_Type": 0,
+    "m_Resolution": -1,
+    "m_CustomResolution": -1,
+    "m_Strength": 1,
+    "m_Bias": 0.05,
+    "m_NormalBias": 0.4,
+    "m_NearPlane": 0.2,
+    "m_CullingMatrixOverride":
+    {
+      "e00": 1,
+      "e01": 0,
+      "e02": 0,
+      "e03": 0,
+      "e10": 0,
+      "e11": 1,
+      "e12": 0,
+      "e13": 0,
+      "e20": 0,
+      "e21": 0,
+      "e22": 1,
+      "e23": 0,
+      "e30": 0,
+      "e31": 0,
+      "e32": 0,
+      "e33": 1
+    },
+    "m_UseCullingMatrixOverride": 0
+  },
+  "m_Cookie": {"fileID": "0"},
+  "m_DrawHalo": 0,
+  "m_Flare": {"fileID": "0"},
+  "m_RenderMode": 0,
+  "m_CullingMask":
+  {
+    "serializedVersion": 2,
+    "m_Bits": 4294967295
+  },
+  "m_RenderingLayerMask": 1,
+  "m_Lightmapping": 4,
+  "m_LightShadowCasterMode": 0,
+  "m_AreaSize": {"x": 1,"y": 1},
+  "m_BounceIntensity": 1,
+  "m_ColorTemperature": 6570,
+  "m_UseColorTemperature": 0,
+  "m_BoundingSphereOverride": {"x": 0,"y": 0,"z": 0,"w": 0},
+  "m_UseBoundingSphereOverride": 0,
+  "m_UseViewFrustumForShadowCasterCull": 1,
+  "m_ShadowRadius": 0,
+  "m_ShadowAngle": 0
+},
+"4931581371912390571" : {
+	"className": "PrefabInstance",
+  "guid": "f2a4c48a7ba242747b3871c140f0d591",
+  "m_LocalPosition": {"x": -14.5215, "y" : 0, "z" : 0.0546608 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4933206755805946235 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1752935983441616,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581371912390571"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4935731013428313863 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4294786093709484,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581371912390571"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581371912390569" : {
+	"className": "Light",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933206755805946235"},
+  "m_Enabled": 1,
+  "serializedVersion": 10,
+  "m_Type": 2,
+  "m_Shape": 0,
+  "m_Color": {"r": 1,"g": 1,"b": 1,"a": 1},
+  "m_Intensity": 1,
+  "m_Range": 10,
+  "m_SpotAngle": 30,
+  "m_InnerSpotAngle": 21.80208,
+  "m_CookieSize": 10,
+  "m_Shadows":
+  {
+    "m_Type": 0,
+    "m_Resolution": -1,
+    "m_CustomResolution": -1,
+    "m_Strength": 1,
+    "m_Bias": 0.05,
+    "m_NormalBias": 0.4,
+    "m_NearPlane": 0.2,
+    "m_CullingMatrixOverride":
+    {
+      "e00": 1,
+      "e01": 0,
+      "e02": 0,
+      "e03": 0,
+      "e10": 0,
+      "e11": 1,
+      "e12": 0,
+      "e13": 0,
+      "e20": 0,
+      "e21": 0,
+      "e22": 1,
+      "e23": 0,
+      "e30": 0,
+      "e31": 0,
+      "e32": 0,
+      "e33": 1
+    },
+    "m_UseCullingMatrixOverride": 0
+  },
+  "m_Cookie": {"fileID": "0"},
+  "m_DrawHalo": 0,
+  "m_Flare": {"fileID": "0"},
+  "m_RenderMode": 0,
+  "m_CullingMask":
+  {
+    "serializedVersion": 2,
+    "m_Bits": 4294967295
+  },
+  "m_RenderingLayerMask": 1,
+  "m_Lightmapping": 4,
+  "m_LightShadowCasterMode": 0,
+  "m_AreaSize": {"x": 1,"y": 1},
+  "m_BounceIntensity": 1,
+  "m_ColorTemperature": 6570,
+  "m_UseColorTemperature": 0,
+  "m_BoundingSphereOverride": {"x": 0,"y": 0,"z": 0,"w": 0},
+  "m_UseBoundingSphereOverride": 0,
+  "m_UseViewFrustumForShadowCasterCull": 1,
+  "m_ShadowRadius": 0,
+  "m_ShadowAngle": 0
+},
+"4931581372116878677" : {
+	"className": "PrefabInstance",
+  "guid": "61652068e34da8749b995181fcdc286a",
+  "m_LocalPosition": {"x": -0.00932503, "y" : 0.0209532, "z" : -0.0148697 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4927116743910262403 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4747363957818326,"guid": "61652068e34da8749b995181fcdc286a","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372116878677"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372144982450" : {
+	"className": "PrefabInstance",
+  "guid": "ad744ae9d35997640982285441a7fbf9",
+  "m_LocalPosition": {"x": -8.31, "y" : 1.21042, "z" : -12.5039 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935703265908714106 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4324213114270664,"guid": "ad744ae9d35997640982285441a7fbf9","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372144982450"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372207998358" : {
+	"className": "PrefabInstance",
+  "guid": "92e24ff0239001f438c6f2091cd07517",
+  "m_LocalPosition": {"x": -7.1515, "y" : -1.7, "z" : 2.74466 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4933005861130776376 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1672979234327214,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372207998358"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4935660948294834348 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4083974570097978,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372207998358"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372207998362" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933005861130776376"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300000","guid": "67e63a55756bbe145b69cb27521b4304","type": 3}
+},
+"4931581372532890636" : {
+	"className": "PrefabInstance",
+  "guid": "92747bc542bfbbd42ae314e3ed05f6eb",
+  "m_LocalPosition": {"x": 19.9075, "y" : -4.17931, "z" : 8.69862 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935816352476851494 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4492550810628394,"guid": "92747bc542bfbbd42ae314e3ed05f6eb","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372532890636"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372605351843" : {
+	"className": "PrefabInstance",
+  "guid": "9c084f604791d6547a296c091f416b93",
+  "m_LocalPosition": {"x": 0, "y" : 0, "z" : 0 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935568474057966947 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4176227216966336,"guid": "9c084f604791d6547a296c091f416b93","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372605351843"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372919240954" : {
+	"className": "PrefabInstance",
+  "guid": "f2a4c48a7ba242747b3871c140f0d591",
+  "m_LocalPosition": {"x": 0, "y" : 0, "z" : 0 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935731012421853270 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4294786093709484,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372919240954"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4933206756946066986 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1752935983441616,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372919240954"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581371852714135" : {
+	"className": "Light",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933206756946066986"},
+  "m_Enabled": 1,
+  "serializedVersion": 10,
+  "m_Type": 2,
+  "m_Shape": 0,
+  "m_Color": {"r": 1,"g": 1,"b": 1,"a": 1},
+  "m_Intensity": 1,
+  "m_Range": 10,
+  "m_SpotAngle": 30,
+  "m_InnerSpotAngle": 21.80208,
+  "m_CookieSize": 10,
+  "m_Shadows":
+  {
+    "m_Type": 0,
+    "m_Resolution": -1,
+    "m_CustomResolution": -1,
+    "m_Strength": 1,
+    "m_Bias": 0.05,
+    "m_NormalBias": 0.4,
+    "m_NearPlane": 0.2,
+    "m_CullingMatrixOverride":
+    {
+      "e00": 1,
+      "e01": 0,
+      "e02": 0,
+      "e03": 0,
+      "e10": 0,
+      "e11": 1,
+      "e12": 0,
+      "e13": 0,
+      "e20": 0,
+      "e21": 0,
+      "e22": 1,
+      "e23": 0,
+      "e30": 0,
+      "e31": 0,
+      "e32": 0,
+      "e33": 1
+    },
+    "m_UseCullingMatrixOverride": 0
+  },
+  "m_Cookie": {"fileID": "0"},
+  "m_DrawHalo": 0,
+  "m_Flare": {"fileID": "0"},
+  "m_RenderMode": 0,
+  "m_CullingMask":
+  {
+    "serializedVersion": 2,
+    "m_Bits": 4294967295
+  },
+  "m_RenderingLayerMask": 1,
+  "m_Lightmapping": 4,
+  "m_LightShadowCasterMode": 0,
+  "m_AreaSize": {"x": 1,"y": 1},
+  "m_BounceIntensity": 1,
+  "m_ColorTemperature": 6570,
+  "m_UseColorTemperature": 0,
+  "m_BoundingSphereOverride": {"x": 0,"y": 0,"z": 0,"w": 0},
+  "m_UseBoundingSphereOverride": 0,
+  "m_UseViewFrustumForShadowCasterCull": 1,
+  "m_ShadowRadius": 0,
+  "m_ShadowAngle": 0
+},
+"4931581372943469309" : {
+	"className": "PrefabInstance",
+  "guid": "01d2be2027d583849bfcb09200b444ff",
+  "m_LocalPosition": {"x": -23.4365, "y" : 0.000129223, "z" : -12.6572 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4927431324894194085 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4995698261615448,"guid": "01d2be2027d583849bfcb09200b444ff","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372943469309"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4932692878602760059 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1140367840634246,"guid": "01d2be2027d583849bfcb09200b444ff","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372943469309"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4933381252215585103 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1859536639701938,"guid": "01d2be2027d583849bfcb09200b444ff","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372943469309"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4932521382512504853 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1030453261220584,"guid": "01d2be2027d583849bfcb09200b444ff","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581372943469309"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372236206079" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4932692878602760059"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300010","guid": "838264b26d34e734796776b3b1ea0e13","type": 3}
+},
+"4931581372659944996" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933381252215585103"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300014","guid": "838264b26d34e734796776b3b1ea0e13","type": 3}
+},
+"4931581373225031215" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4932521382512504853"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300012","guid": "838264b26d34e734796776b3b1ea0e13","type": 3}
+},
+"4931581373154073216" : {
+	"className": "PrefabInstance",
+  "guid": "92e24ff0239001f438c6f2091cd07517",
+  "m_LocalPosition": {"x": -21.0315, "y" : -1.7, "z" : 2.74466 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4933005859915730990 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1672979234327214,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373154073216"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4935660947345614778 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4083974570097978,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373154073216"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581373154073220" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933005859915730990"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300000","guid": "67e63a55756bbe145b69cb27521b4304","type": 3}
+},
+"4931581373216208065" : {
+	"className": "PrefabInstance",
+  "guid": "178c1e3d81ca1d64393f3c703b4b8af5",
+  "m_LocalPosition": {"x": -26.7211, "y" : 2.89924, "z" : -8.4134 },
+  "m_LocalRotation": {"x": 0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4927344626169486541 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4801522378418188,"guid": "178c1e3d81ca1d64393f3c703b4b8af5","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373216208065"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581373507579323" : {
+	"className": "PrefabInstance",
+  "guid": "f2a4c48a7ba242747b3871c140f0d591",
+  "m_LocalPosition": {"x": -6.8715, "y" : 0, "z" : -2.86534 },
+  "m_LocalRotation": {"x": -0, "y" : -1, "z" : -0, "w" : 0 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4933206756324100971 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1752935983441616,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373507579323"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4935731012909552919 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4294786093709484,"guid": "f2a4c48a7ba242747b3871c140f0d591","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373507579323"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581372367136771" : {
+	"className": "Light",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933206756324100971"},
+  "m_Enabled": 1,
+  "serializedVersion": 10,
+  "m_Type": 2,
+  "m_Shape": 0,
+  "m_Color": {"r": 1,"g": 1,"b": 1,"a": 1},
+  "m_Intensity": 1,
+  "m_Range": 10,
+  "m_SpotAngle": 30,
+  "m_InnerSpotAngle": 21.80208,
+  "m_CookieSize": 10,
+  "m_Shadows":
+  {
+    "m_Type": 0,
+    "m_Resolution": -1,
+    "m_CustomResolution": -1,
+    "m_Strength": 1,
+    "m_Bias": 0.05,
+    "m_NormalBias": 0.4,
+    "m_NearPlane": 0.2,
+    "m_CullingMatrixOverride":
+    {
+      "e00": 1,
+      "e01": 0,
+      "e02": 0,
+      "e03": 0,
+      "e10": 0,
+      "e11": 1,
+      "e12": 0,
+      "e13": 0,
+      "e20": 0,
+      "e21": 0,
+      "e22": 1,
+      "e23": 0,
+      "e30": 0,
+      "e31": 0,
+      "e32": 0,
+      "e33": 1
+    },
+    "m_UseCullingMatrixOverride": 0
+  },
+  "m_Cookie": {"fileID": "0"},
+  "m_DrawHalo": 0,
+  "m_Flare": {"fileID": "0"},
+  "m_RenderMode": 0,
+  "m_CullingMask":
+  {
+    "serializedVersion": 2,
+    "m_Bits": 4294967295
+  },
+  "m_RenderingLayerMask": 1,
+  "m_Lightmapping": 4,
+  "m_LightShadowCasterMode": 0,
+  "m_AreaSize": {"x": 1,"y": 1},
+  "m_BounceIntensity": 1,
+  "m_ColorTemperature": 6570,
+  "m_UseColorTemperature": 0,
+  "m_BoundingSphereOverride": {"x": 0,"y": 0,"z": 0,"w": 0},
+  "m_UseBoundingSphereOverride": 0,
+  "m_UseViewFrustumForShadowCasterCull": 1,
+  "m_ShadowRadius": 0,
+  "m_ShadowAngle": 0
+},
+"4931581373712508226" : {
+	"className": "PrefabInstance",
+  "guid": "92e24ff0239001f438c6f2091cd07517",
+  "m_LocalPosition": {"x": -0.891499, "y" : -1.7, "z" : -5.58534 },
+  "m_LocalRotation": {"x": -0, "y" : -1, "z" : -0, "w" : 0 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935660946712729720 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4083974570097978,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373712508226"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4933005860632506348 stripped" : {
+	"className": "GameObject",
+  "m_CorrespondingSourceObject": {"fileID": 1672979234327214,"guid": "92e24ff0239001f438c6f2091cd07517","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373712508226"},
+  "m_PrefabAsset": {"fileID": "0"}
+},
+"4931581373289605211" : {
+	"className": "MeshCollider",
+  "m_ObjectHideFlags": 0,
+  "m_CorrespondingSourceObject": {"fileID": "0"},
+  "m_PrefabInstance": {"fileID": "0"},
+  "m_PrefabAsset": {"fileID": "0"},
+  "m_GameObject": {"fileID": "4933005860632506348"},
+  "m_Material": {"fileID": "0"},
+  "m_IsTrigger": 0,
+  "m_Enabled": 1,
+  "serializedVersion": 4,
+  "m_Convex": 0,
+  "m_CookingOptions": 30,
+  "m_Mesh": {"fileID": "4300000","guid": "67e63a55756bbe145b69cb27521b4304","type": 3}
+},
+"4931581373760081715" : {
+	"className": "PrefabInstance",
+  "guid": "720e5cc8f907ae8408a75ca1e8182db6",
+  "m_LocalPosition": {"x": 19.9075, "y" : -4.17931, "z" : 8.68224 },
+  "m_LocalRotation": {"x": -0, "y" : -0, "z" : -0, "w" : 1 },
+  "m_LocalScale": {"x": null, "y" : null, "z" : null }
+},
+"4935746165451210709 stripped" : {
+	"className": "Transform",
+  "m_CorrespondingSourceObject": {"fileID": 4281351827108070,"guid": "720e5cc8f907ae8408a75ca1e8182db6","type": 3},
+  "m_PrefabInstance": {"fileID": "4931581373760081715"},
+  "m_PrefabAsset": {"fileID": "0"}
+}
+}

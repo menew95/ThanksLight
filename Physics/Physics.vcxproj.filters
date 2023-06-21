@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="pch">
+      <UniqueIdentifier>{b782a07f-d2b8-4575-84ff-75f5055796bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dllmain">
+      <UniqueIdentifier>{45af1485-f50a-4f2f-b5b4-7bcc3c7af6f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicsEngine">
+      <UniqueIdentifier>{eb261919-46bf-44c8-be29-7a614f5fb24e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PhysicsEngine\PhysX">
+      <UniqueIdentifier>{b875103a-1a22-481e-99cc-5d4bca236d32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physx">
+      <UniqueIdentifier>{c09f056a-b583-49fe-b9fe-6a94732cc00a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dllHeader">
+      <UniqueIdentifier>{727efc80-2f27-4344-8fc4-e57a18ab0fb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dllHeader\dllSetting">
+      <UniqueIdentifier>{23e4373d-eaf4-48c7-98e5-ef87beb7fcbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physx\Scene">
+      <UniqueIdentifier>{53ccc565-4936-4f26-a49e-78b681513fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physx\PhysXUtil">
+      <UniqueIdentifier>{e49ccc79-6277-4b79-a856-f5f644c9be65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Export">
+      <UniqueIdentifier>{50f974f4-9069-41f1-a5e0-c747bbc377e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dllHeader\PhysicsInfoHelper">
+      <UniqueIdentifier>{9be89c10-fb12-4c3a-b9ac-affefbdf4a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unused">
+      <UniqueIdentifier>{0378fdf6-73be-48da-bbb2-6fadd45dbac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unused\BaseActor">
+      <UniqueIdentifier>{7f5bc3a1-2b9f-4d9c-ada3-7638a4ff8f4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Unused\Shape">
+      <UniqueIdentifier>{e9a80b36-6add-4162-a90d-44dc6c96bd5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EventCallback">
+      <UniqueIdentifier>{20a1cb06-54d3-4210-98fe-8a37f48b504c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>pch</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>dllmain</Filter>
+    </ClInclude>
+    <ClInclude Include="PhsXPhysicsEngine.h">
+      <Filter>PhysicsEngine\PhysX</Filter>
+    </ClInclude>
+    <ClInclude Include="dllDefine.h">
+      <Filter>dllHeader\dllSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsInfoHelper.h">
+      <Filter>dllHeader\PhysicsInfoHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Physx\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysXUtil.h">
+      <Filter>Physx\PhysXUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidActor.h">
+      <Filter>Unused\BaseActor</Filter>
+    </ClInclude>
+    <ClInclude Include="Export\IPhysicsEngine.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="Export\PhysicsInfo.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Unused\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="EventCallback.h">
+      <Filter>EventCallback</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>pch</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>dllmain</Filter>
+    </ClCompile>
+    <ClCompile Include="IPhysicsEngine.cpp">
+      <Filter>PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="PhsXPhysicsEngine.cpp">
+      <Filter>PhysicsEngine\PhysX</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsInfoHelper.cpp">
+      <Filter>dllHeader\PhysicsInfoHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Physx\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysXUtil.cpp">
+      <Filter>Physx\PhysXUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidActor.cpp">
+      <Filter>Unused\BaseActor</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Unused\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="EventCallback.cpp">
+      <Filter>EventCallback</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

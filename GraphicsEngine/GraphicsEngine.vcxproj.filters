@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Export">
+      <UniqueIdentifier>{a91ac452-551a-4a80-9b18-e74a6bf1cbf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine">
+      <UniqueIdentifier>{7547f142-2242-4079-b992-78e011761118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11">
+      <UniqueIdentifier>{5b95ff04-6f10-4180-a635-6f295798bcb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ResourceManager">
+      <UniqueIdentifier>{75119467-7954-4626-8d6c-95846d5879b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource">
+      <UniqueIdentifier>{37a03000-923a-474f-a4b2-c2370e75e49c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Material">
+      <UniqueIdentifier>{414b822b-ee28-4437-a2f5-fd955d8cc41d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Mesh">
+      <UniqueIdentifier>{ba4a9b91-685f-4a09-a4c0-b074415b105f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader">
+      <UniqueIdentifier>{94b905c7-813c-4dba-a505-7e554114d1fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Texture">
+      <UniqueIdentifier>{2687172a-3a7c-4399-a527-75a38d16a47c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer">
+      <UniqueIdentifier>{dadb6e5f-6d04-40a3-915b-cf2d6f29e9a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderBuffer">
+      <UniqueIdentifier>{eb280470-f0b7-4ea6-8871-859c06cf9282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase">
+      <UniqueIdentifier>{1981f229-f49c-4752-b8cb-87c35a0cd155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer\SamplerBuffer">
+      <UniqueIdentifier>{b60e7181-ad2c-49b6-9e3d-a8f0330ddae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer\ShaderResourceBuffer">
+      <UniqueIdentifier>{5f89e9bb-3ffa-4811-9cea-9dc27f16ca4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\ConstBuffer">
+      <UniqueIdentifier>{0c9f1d3b-3f5e-4094-b17e-99769a5def8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\VertexBuffer">
+      <UniqueIdentifier>{c9b337ed-c30d-4010-acd9-88f28ae8f51d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\IndexBuffer">
+      <UniqueIdentifier>{b2d93d13-dbe9-4ecf-87a9-0bed7772fc6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\SamplerState">
+      <UniqueIdentifier>{12773bca-7866-4e62-9f0f-e34654fa5fcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Parser">
+      <UniqueIdentifier>{31724c2d-e4a3-488c-8630-78bbc0acdd85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Parser\MaterialParser">
+      <UniqueIdentifier>{e35ef600-3cfb-46d8-972b-0592f0dd55d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Parser\ASEParser">
+      <UniqueIdentifier>{2f59fe08-1b2d-4736-bc97-639cb9bff931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\EngineCamera">
+      <UniqueIdentifier>{252ee841-68aa-4f4b-bf1d-68cded854a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\Culling">
+      <UniqueIdentifier>{1082d2b2-b971-441f-a74e-381542522e12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\D3D">
+      <UniqueIdentifier>{bdda218c-38b9-4400-b2a9-280c822c4cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\LightPass">
+      <UniqueIdentifier>{6dfeaa48-745f-4bb9-bcf5-eb2a376d2ac2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\IBLPass">
+      <UniqueIdentifier>{39962e0f-2776-4d09-b4e4-ad53bd6a93eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\Picking">
+      <UniqueIdentifier>{65c7688e-5fdf-4ff1-8aae-eec6bde722d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\PostProcess">
+      <UniqueIdentifier>{eeccaa90-4541-4d12-96a2-82d01e22b5e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\RenderQueue">
+      <UniqueIdentifier>{e8cbda52-5597-45df-b828-ea8e755edad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\SkyBox">
+      <UniqueIdentifier>{af72ca92-73d8-4030-b12f-a8763b9af156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\SSAO">
+      <UniqueIdentifier>{4402f430-b35e-4ab6-9bfb-233700ffde02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\D3D\RenderTargetView">
+      <UniqueIdentifier>{d3c947e5-3079-40aa-af23-bfec1eff753c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\D3D\DepthStencilView">
+      <UniqueIdentifier>{459c8e11-8236-45cd-810c-672c2a57355b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\D3D\Device">
+      <UniqueIdentifier>{88ce5cac-f7bd-430c-8af5-016d3f406f2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\Renderer">
+      <UniqueIdentifier>{959cd4fa-81fe-4912-8509-2512e12605e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX11\DXTK">
+      <UniqueIdentifier>{b6439f2f-7d43-4310-abfc-d5509ee1030d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\HLSL">
+      <UniqueIdentifier>{b67472d2-31e9-4842-a352-3e4b7754247d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\HLSL\VS">
+      <UniqueIdentifier>{6e075507-31a0-46ac-82c9-396d50563a36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\HLSL\Header">
+      <UniqueIdentifier>{0337e1d7-ec5d-4be9-8989-af02f4387c4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager\Resource\Shader\HLSL\PS">
+      <UniqueIdentifier>{6f5fb609-7c8b-4c7d-bfa6-fc0e936f81c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\ProjectorPass">
+      <UniqueIdentifier>{7f92853a-6962-4ef5-a1ea-1cd2ae42cb79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicsEngine\Deferred_Pass">
+      <UniqueIdentifier>{710628b9-798c-41ac-9b48-18c8e75705b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{b3a7f74b-3cf9-41f3-8c6e-d32b3c444173}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Export\IGraphicsEngine.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsEngine.h">
+      <Filter>GraphicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="DX11Define.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Export\IMesh.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="Export\IMaterial.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>ResourceManager\Resource\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>ResourceManager\Resource\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>ResourceManager\Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Export\ITexture.h">
+      <Filter>Export</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>ResourceManager\Resource\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderBufferBase.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DomainShaderBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryShaderBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="HullShaderBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="PixelShaderBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexShaderBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputeShaderBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferBase.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase</Filter>
+    </ClInclude>
+    <ClInclude Include="SamplerBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\SamplerBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderResourceBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\ShaderResourceBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderResourceBase.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\ConstBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="SamplerState.h">
+      <Filter>GraphicsEngine\SamplerState</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\Parser.h">
+      <Filter>ResourceManager\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\MaterialFile.h">
+      <Filter>ResourceManager\Parser\MaterialParser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\MaterialParser.h">
+      <Filter>ResourceManager\Parser\MaterialParser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\Lexer.h">
+      <Filter>ResourceManager\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\ASEFile.h">
+      <Filter>ResourceManager\Parser\ASEParser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\ASEParser.h">
+      <Filter>ResourceManager\Parser\ASEParser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser\ParsingData.h">
+      <Filter>ResourceManager\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugMesh.h">
+      <Filter>ResourceManager\Resource\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineCamera.h">
+      <Filter>GraphicsEngine\EngineCamera</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAO.h">
+      <Filter>GraphicsEngine\SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyBox.h">
+      <Filter>GraphicsEngine\SkyBox</Filter>
+    </ClInclude>
+    <ClInclude Include="Picking.h">
+      <Filter>GraphicsEngine\Picking</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderQueue.h">
+      <Filter>GraphicsEngine\RenderQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="LightManager.h">
+      <Filter>GraphicsEngine\LightPass</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>GraphicsEngine\LightPass</Filter>
+    </ClInclude>
+    <ClInclude Include="Frustum.h">
+      <Filter>GraphicsEngine\Culling</Filter>
+    </ClInclude>
+    <ClInclude Include="IBL.h">
+      <Filter>GraphicsEngine\IBLPass</Filter>
+    </ClInclude>
+    <ClInclude Include="PostProcess.h">
+      <Filter>GraphicsEngine\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTargetView.h">
+      <Filter>GraphicsEngine\D3D\RenderTargetView</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>GraphicsEngine\D3D\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="DepthStencilView.h">
+      <Filter>GraphicsEngine\D3D\DepthStencilView</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstBufferManager.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\ConstBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstBufferDataInfo.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\ConstBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSTextureLoader.h">
+      <Filter>DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="DXTKFont.h">
+      <Filter>DirectX11\DXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="UIRenderer.h">
+      <Filter>GraphicsEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Export\ResourceBase.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>GraphicsEngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\VertexBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\IndexBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectedTexture.h">
+      <Filter>GraphicsEngine\ProjectorPass</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjecedTexturePass.h">
+      <Filter>GraphicsEngine\ProjectorPass</Filter>
+    </ClInclude>
+    <ClInclude Include="Deferred_Pass.h">
+      <Filter>GraphicsEngine\Deferred_Pass</Filter>
+    </ClInclude>
+    <ClInclude Include="IDevice.h">
+      <Filter>GraphicsEngine\D3D\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefix.h">
+      <Filter>GraphicsEngine\D3D\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>GraphicsEngine\D3D\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicsEngine.cpp">
+      <Filter>GraphicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="IGraphicsEngine.cpp">
+      <Filter>GraphicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="dxerr.cpp">
+      <Filter>DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
+      <Filter>DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>ResourceManager\Resource\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>ResourceManager\Resource\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>ResourceManager\Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>ResourceManager\Resource\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderBufferBase.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DomainShaderBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryShaderBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="HullShaderBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="PixelShaderBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexShaderBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputeShaderBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferBase.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase</Filter>
+    </ClCompile>
+    <ClCompile Include="SamplerBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\SamplerBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderResourceBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\ShaderResourceBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderResourceBase.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\ConstBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="SamplerState.cpp">
+      <Filter>GraphicsEngine\SamplerState</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\Parser.cpp">
+      <Filter>ResourceManager\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\MaterialFile.cpp">
+      <Filter>ResourceManager\Parser\MaterialParser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\MaterialParser.cpp">
+      <Filter>ResourceManager\Parser\MaterialParser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\Lexer.cpp">
+      <Filter>ResourceManager\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\ASEFile.cpp">
+      <Filter>ResourceManager\Parser\ASEParser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\ASEParser.cpp">
+      <Filter>ResourceManager\Parser\ASEParser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser\ParsingData.cpp">
+      <Filter>ResourceManager\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugMesh.cpp">
+      <Filter>ResourceManager\Resource\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineCamera.cpp">
+      <Filter>GraphicsEngine\EngineCamera</Filter>
+    </ClCompile>
+    <ClCompile Include="SSAO.cpp">
+      <Filter>GraphicsEngine\SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyBox.cpp">
+      <Filter>GraphicsEngine\SkyBox</Filter>
+    </ClCompile>
+    <ClCompile Include="Picking.cpp">
+      <Filter>GraphicsEngine\Picking</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderQueue.cpp">
+      <Filter>GraphicsEngine\RenderQueue</Filter>
+    </ClCompile>
+    <ClCompile Include="LightManager.cpp">
+      <Filter>GraphicsEngine\LightPass</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>GraphicsEngine\LightPass</Filter>
+    </ClCompile>
+    <ClCompile Include="Frustum.cpp">
+      <Filter>GraphicsEngine\Culling</Filter>
+    </ClCompile>
+    <ClCompile Include="IBL.cpp">
+      <Filter>GraphicsEngine\IBLPass</Filter>
+    </ClCompile>
+    <ClCompile Include="PostProcess.cpp">
+      <Filter>GraphicsEngine\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTargetView.cpp">
+      <Filter>GraphicsEngine\D3D\RenderTargetView</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>GraphicsEngine\D3D\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="DepthStencilView.cpp">
+      <Filter>GraphicsEngine\D3D\DepthStencilView</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstBufferManager.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\ConstBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSTextureLoader.cpp">
+      <Filter>DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="DXTKFont.cpp">
+      <Filter>DirectX11\DXTK</Filter>
+    </ClCompile>
+    <ClCompile Include="UIRenderer.cpp">
+      <Filter>GraphicsEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Export\ResourceBase.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>GraphicsEngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\VertexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>ResourceManager\Resource\Shader\ShaderResourceBuffer\BufferBase\IndexBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjecedTexturePass.cpp">
+      <Filter>GraphicsEngine\ProjectorPass</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectedTexture.cpp">
+      <Filter>GraphicsEngine\ProjectorPass</Filter>
+    </ClCompile>
+    <ClCompile Include="Deferred_Pass.cpp">
+      <Filter>GraphicsEngine\Deferred_Pass</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="HLSL\Deferred_Debug_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS_Bump.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS_Light.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS_NT.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS_PBR.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS_SSAOLight.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_VS_Light.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_VS_Mesh.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_VS_Mesh_Instance.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_VS_Skin.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Gizmo_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Gizmo_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\IBL_Irradiance_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\IBL_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_Bloom_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_Blur_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Shadow_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\SkyBox_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\SSAO_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Texture_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Shadow_VS_Skin_Mesh.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Shadow_VS_Static_Mesh.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\SkyBox_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\SSAO_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Forward_PS_Light.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\ProjectedPass_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_AddSampling_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_DownSampling_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_ToneMap_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Deferred_PS_VantaBlack.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_OutLine_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_OutLine_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\Quard_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_OutLineAdd_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\OutLineMesh_VS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\VS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\OutLineMesh_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostProcess_UpSampling_PS.hlsl">
+      <Filter>ResourceManager\Resource\Shader\HLSL\PS</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HLSL\Input_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+    <None Include="HLSL\Light_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+    <None Include="HLSL\Math_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+    <None Include="HLSL\PBR_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+    <None Include="HLSL\Struct_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+    <None Include="HLSL\ConstBuffer_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+    <None Include="HLSL\Output_Header.hlsli">
+      <Filter>ResourceManager\Resource\Shader\HLSL\Header</Filter>
+    </None>
+  </ItemGroup>
+</Project>

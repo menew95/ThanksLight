@@ -10,6 +10,7 @@
 // 여기에 미리 컴파일하려는 헤더 추가
 #include "../Common/EngineFramework.h"
 #include "DX11Define.h"
+#include "DX11Utilitys.h"
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")

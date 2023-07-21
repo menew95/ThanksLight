@@ -16,7 +16,7 @@ TLGraphicsEngine::ProjecedTexturePass::ProjecedTexturePass()
 	m_Texture_VS = GraphicResourceManager::Instance()->GetShaderRef("PostProcess_VS");
 	m_Texture_PS = GraphicResourceManager::Instance()->GetShaderRef("Texture_PS");
 	m_ProjectedPass_PS = GraphicResourceManager::Instance()->GetShaderRef("ProjectedPass_PS");
-	m_MeshVS = GraphicResourceManager::Instance()->GetShaderRef("Deferred_VS_Mesh");
+	m_Mesh_VS = GraphicResourceManager::Instance()->GetShaderRef("Deferred_VS_Mesh");
 	m_Forward_Light_PS = GraphicResourceManager::Instance()->GetShaderRef("Forward_PS_Light");
 
 	for (int i = 0; i < MAX_PROJECTED_TEXTURE; i++)
@@ -42,10 +42,65 @@ void TLGraphicsEngine::ProjecedTexturePass::RecordDepth(RenderTargetView* depthB
 	}
 }
 
+void TLGraphicsEngine::ProjecedTexturePass::RecordDepth(DepthStencilView* depthBuffer)
+{
+	for (auto proj : m_projectedTextures)
+	{
+		if (proj->GetOnOff() && proj->IsDirty())
+		{
+			RecordDepthBuffer(depthBuffer, proj);
+		}
+	}
+}
+
 void TLGraphicsEngine::ProjecedTexturePass::RecordDepthBuffer(RenderTargetView* depthBuffer, std::shared_ptr<ProjectedTexture> projected)
 {
 	auto engine = GraphicsEngine::Instance();
 	auto* deviceContext = engine->GetDeviceContext();
+
+	projected->BindDepth(deviceContext);
+
+	// 렌더스테이트
+	deviceContext->RSSetState(engine->GetSolidRS());
+
+	// 입력 배치 객체 셋팅
+	deviceContext->IASetInputLayout(m_Texture_VS->GetInputLayout());
+	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+	// 인덱스버퍼와 버텍스버퍼 셋팅
+	UINT stride = sizeof(QuadVertex);
+	UINT offset = 0;
+
+	deviceContext->IASetVertexBuffers(0, 1, &RenderTargetView::m_VB, &stride, &offset);
+	deviceContext->IASetIndexBuffer(RenderTargetView::m_IB, DXGI_FORMAT_R32_UINT, 0);
+
+	ID3D11ShaderResourceView** srvs[1] = { depthBuffer->GetSRVR() };
+
+	m_Texture_PS->Update(nullptr, srvs);
+
+	deviceContext->VSSetShader(m_Texture_VS->GetShader<ID3D11VertexShader>(), nullptr, 0);
+	deviceContext->PSSetShader(m_Texture_PS->GetShader<ID3D11PixelShader>(), nullptr, 0);
+
+	deviceContext->DrawIndexed(6, 0, 0);
+
+	projected->SetDirty(false);
+
+	ID3D11RenderTargetView* rtvNull = nullptr;
+	deviceContext->OMSetRenderTargets(1, &rtvNull, nullptr);
+
+	ID3D11ShaderResourceView* nullSRV[1] = {};
+	deviceContext->PSSetShaderResources(0, 1, nullSRV);
+}
+
+void TLGraphicsEngine::ProjecedTexturePass::RecordDepthBuffer(DepthStencilView* depthBuffer, std::shared_ptr<ProjectedTexture> projected)
+{
+	auto engine = GraphicsEngine::Instance();
+	auto* deviceContext = engine->GetDeviceContext();
+
+	deviceContext->CopyResource(projected->GetDepthStencilView()->GetBackBuffer(), depthBuffer->GetBackBuffer());
+
+	projected->SetDirty(false);
+	return;
 
 	projected->BindDepth(deviceContext);
 
@@ -106,12 +161,12 @@ void TLGraphicsEngine::ProjecedTexturePass::RenderToProjectedTexture(RenderObjec
 	projected->SetDirty(true);
 	projected->SetOnOff(true);
 
-	m_MeshVS->Bind(deviceContext);
+	m_Mesh_VS->Bind(deviceContext);
 
 	deviceContext->OMSetDepthStencilState(GraphicsEngine::Instance()->GetNormalDSS(), 0);
 
 	// 렌더스테이트
-	deviceContext->RSSetState(GraphicsEngine::Instance()->GetShadowMapRS());
+	deviceContext->RSSetState(GraphicsEngine::Instance()->GetSolidRS());
 
 	XMMATRIX world = XMLoadFloat4x4(&renderObject->m_World);
 	XMMATRIX worldInv = XMMatrixInverse(nullptr, world);
@@ -134,13 +189,13 @@ void TLGraphicsEngine::ProjecedTexturePass::RenderToProjectedTexture(RenderObjec
 		&perObjectCB
 	};
 
-	m_MeshVS->Update(cbs.data(), nullptr);
+	m_Mesh_VS->Update(cbs.data(), nullptr);
 
 	// 입력 배치 객체 셋팅
-	deviceContext->IASetInputLayout(m_MeshVS->GetInputLayout());
+	deviceContext->IASetInputLayout(m_Mesh_VS->GetInputLayout());
 
 
-	deviceContext->VSSetShader(m_MeshVS->GetShader<ID3D11VertexShader>(), nullptr, 0);
+	deviceContext->VSSetShader(m_Mesh_VS->GetShader<ID3D11VertexShader>(), nullptr, 0);
 
 	auto _indexBuffer = renderObject->m_Mesh->GetIndexBuffers();
 
@@ -245,7 +300,7 @@ void TLGraphicsEngine::ProjecedTexturePass::RenderProjector(ID3D11DeviceContext*
 	deviceContext->OMSetDepthStencilState(GraphicsEngine::Instance()->GetOffDepthCheckDSS(), 0);
 
 	// 렌더스테이트
-	deviceContext->RSSetState(GraphicsEngine::Instance()->GetSolidRS());
+	deviceContext->RSSetState(GraphicsEngine::Instance()->GetShadowMapRS());
 
 	// 입력 배치 객체 셋팅
 	deviceContext->IASetInputLayout(m_Texture_VS->GetInputLayout());

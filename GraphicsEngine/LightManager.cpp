@@ -101,6 +101,7 @@ void TLGraphicsEngine::LightManager::UpdateShadowMap(Light* light, std::vector<R
 		cbs.push_back(&_perObjectCB);
 		vs->Update(cbs.data(), nullptr);
 		deviceContext->VSSetShader(vs->GetShader<ID3D11VertexShader>(), nullptr, 0);
+		deviceContext->PSSetShader(nullptr, nullptr, 0);
 
 		auto _indexBuffers = renderObjects[i].m_Mesh->GetIndexBuffers();
 

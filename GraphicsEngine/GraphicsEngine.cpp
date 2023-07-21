@@ -248,6 +248,7 @@ void TLGraphicsEngine::GraphicsEngine::InitializeGraphic(HINSTANCE hinst, HWND h
 		&featureLevel,
 		&m_pD3dImmediateContext
 	);
+
 	if (FAILED(hr))
 	{
 		MessageBox(0, L"D3D11CreateDevice Failed.", 0, 0);
@@ -259,6 +260,10 @@ void TLGraphicsEngine::GraphicsEngine::InitializeGraphic(HINSTANCE hinst, HWND h
 		MessageBox(0, L"Direct3D Feature Level 11 unsupported.", 0, 0);
 		//return S_FALSE;
 	}
+
+	HRESULT _hr = m_pD3dImmediateContext->QueryInterface(__uuidof(m_User), &m_User);
+
+	HR(_hr, "failed to get d3d11-user-defined-annotation");
 
 	HR(m_pD3dDevice->CheckMultisampleQualityLevels(
 		DXGI_FORMAT_R8G8B8A8_UNORM, 4, &m_4xMsaaQuality));
@@ -910,6 +915,16 @@ void TLGraphicsEngine::GraphicsEngine::GetLightBuffer(Light_CB* lightcb, std::ve
 	m_pLightManager->UpdateLightBuffer(lightcb, srvs);
 }
 
+void TLGraphicsEngine::GraphicsEngine::BeginEvent(const wchar_t* event)
+{
+	m_User->BeginEvent(event);
+}
+
+void TLGraphicsEngine::GraphicsEngine::EndEvent()
+{
+	m_User->EndEvent();
+}
+
 void TLGraphicsEngine::GraphicsEngine::BeginRender()
 {
 	assert(m_pD3dImmediateContext);
@@ -965,6 +980,8 @@ void TLGraphicsEngine::GraphicsEngine::Render()
 	std::queue<RenderObject> m_ProjectedObjects;
 	std::queue<RenderObject> m_OutLineObjects;
 
+	BeginEvent(TEXT("Mesh Pass"));
+
 	while (!m_pRenderQueue->m_DrawRenderQueue.empty())
 	{
 		RenderObject renderObj = m_pRenderQueue->m_DrawRenderQueue.front();
@@ -997,10 +1014,19 @@ void TLGraphicsEngine::GraphicsEngine::Render()
 		}
 	}
 
+	EndEvent();
+
+	BeginEvent(TEXT("Light Pass"));
+
 	if (m_pLightManager)
 	{
 		m_pLightManager->CalcLight(renderObjs);
 	}
+
+	EndEvent();
+
+
+	BeginEvent(TEXT("Project Pass"));
 
 	while (!m_ProjectedObjects.empty())
 	{
@@ -1012,6 +1038,9 @@ void TLGraphicsEngine::GraphicsEngine::Render()
 		m_pProjecedTexturePass->MakeProjectedTexture(&renderObj);
 	}
 
+	EndEvent();
+
+	BeginEvent(TEXT("Outline Pass"));
 
 	{
 		m_pD3dImmediateContext->OMSetRenderTargets(1, m_RTVs[6]->GetRTVR(), m_pPostProcess->GetOutLineDSV()->GetDSV());
@@ -1039,6 +1068,9 @@ void TLGraphicsEngine::GraphicsEngine::Render()
 
 		m_pPostProcess->OutLine(nullptr);
 	}
+
+	EndEvent();
+
 
 	if (m_bOnOffSSAO && m_pSSAO != nullptr)
 	{
@@ -1068,6 +1100,8 @@ void TLGraphicsEngine::GraphicsEngine::EndRender()
 		m_pRenderQueue->RegistGizmo(m_ResourceManager->GetDebugMesh(1), WM, _color);
 	}
 
+	BeginEvent(TEXT("Gizmo Pass"));
+
 	while (!m_pRenderQueue->m_DrawGizmoQueue.empty())
 	{
 		GizmoObject renderObj = m_pRenderQueue->m_DrawGizmoQueue.front();
@@ -1076,13 +1110,19 @@ void TLGraphicsEngine::GraphicsEngine::EndRender()
 		m_pRenderer->RenderGizmo(m_pD3dImmediateContext, &renderObj);
 	}
 
+	EndEvent();
+
 	DirectX::XMFLOAT4 test3(1.f, 1.f, 0.f, 1.f);
 	DirectX::XMFLOAT4 _white(1.f, 1.f, 1.f, 1.f);
 
+	BeginEvent(TEXT("UI Pass"));
+	
 	m_pUIRenderer->BeginRender();
 	m_pUIRenderer->OnRender();
 	m_pUIRenderer->EndRender();
-	
+
+	EndEvent();
+
 	HR(m_pSwapChain->Present(0, 0));
 }
 
@@ -1107,78 +1147,88 @@ void TLGraphicsEngine::GraphicsEngine::MRTRender()
 
 	m_pD3dImmediateContext->ClearRenderTargetView(m_RTVs[0]->GetRTV(), &color[0]);
 
-	m_pD3dImmediateContext->OMSetRenderTargets(1, m_RTVs[0]->GetRTVR(), m_pDepthStencilView->GetDSV());
+	m_pD3dImmediateContext->OMSetRenderTargets(1, m_RTVs[0]->GetRTVR(), nullptr);
 
 	if (m_pSkyBox != nullptr)
 	{
+		BeginEvent(TEXT("Sky Box Pass"));
+
 		m_pSkyBox->Render();
+
+		EndEvent();
 	}
 
-	m_pD3dImmediateContext->OMSetDepthStencilState(m_MRTDSS, 128);
-	// 렌더스테이트
-	m_pD3dImmediateContext->RSSetState(m_pSolidRS);
-
-	// 입력 배치 객체 셋팅
-	m_pD3dImmediateContext->IASetInputLayout(RenderTargetView::m_DeferredVS->GetInputLayout());
-	m_pD3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-	// 인덱스버퍼와 버텍스버퍼 셋팅
-	UINT stride = sizeof(QuadVertex);
-	UINT offset = 0;
-
-	m_pD3dImmediateContext->IASetVertexBuffers(0, 1, &RenderTargetView::m_VB, &stride, &offset);
-	m_pD3dImmediateContext->IASetIndexBuffer(RenderTargetView::m_IB, DXGI_FORMAT_R32_UINT, 0);
-
-	m_pD3dImmediateContext->VSSetShader(RenderTargetView::m_DeferredVS->GetShader<ID3D11VertexShader>(), nullptr, 0);
-
-	std::vector<ID3D11ShaderResourceView**> srvs =
 	{
-		m_RTVs[1]->GetSRVR(),
-		m_RTVs[2]->GetSRVR(),
-		m_RTVs[3]->GetSRVR(),
-		m_RTVs[4]->GetSRVR(),
-		m_RTVs[5]->GetSRVR(),
-		m_pSkyBox->m_BRDFTextrue->GetSRVR(),
-		m_pSkyBox->m_IrradianceTextrue->GetSRVR(),
-		m_pSkyBox->m_SkyBoxTextrue->GetSRVR()
-	};
+		BeginEvent(TEXT("Deferred Merge Pass"));
 
-	Light_CB cb;
-	cb.IBLFactor = m_fIBLFactor;
-	m_pLightManager->UpdateLightBuffer(&cb, srvs);
+		m_pD3dImmediateContext->OMSetDepthStencilState(m_MRTDSS, 128);
+		// 렌더스테이트
+		m_pD3dImmediateContext->RSSetState(m_pSolidRS);
 
-	std::vector<CBBase*> cbs =
-	{
-		&cb
-	};
+		// 입력 배치 객체 셋팅
+		m_pD3dImmediateContext->IASetInputLayout(RenderTargetView::m_DeferredVS->GetInputLayout());
+		m_pD3dImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	if (m_bOnOffSSAO)
-	{
-		m_pSSAO->GetSSAOMap();
-		srvs[5] = m_RTVs[6]->GetSRVR();
-		RenderTargetView::m_DeferredSSAOPS->Update(cbs.data(), srvs);
-		m_pD3dImmediateContext->PSSetShader(RenderTargetView::m_DeferredSSAOPS->GetShader<ID3D11PixelShader>(), nullptr, 0);
-	}
-	else
-	{
-		RenderTargetView::m_DeferredPS->Update(cbs.data(), srvs);
-		m_pD3dImmediateContext->PSSetShader(RenderTargetView::m_DeferredPS->GetShader<ID3D11PixelShader>(), nullptr, 0);
-	}
+		// 인덱스버퍼와 버텍스버퍼 셋팅
+		UINT stride = sizeof(QuadVertex);
+		UINT offset = 0;
 
-	m_pD3dImmediateContext->DrawIndexed(6, 0, 0);
+		m_pD3dImmediateContext->IASetVertexBuffers(0, 1, &RenderTargetView::m_VB, &stride, &offset);
+		m_pD3dImmediateContext->IASetIndexBuffer(RenderTargetView::m_IB, DXGI_FORMAT_R32_UINT, 0);
 
-	std::vector<ID3D11ShaderResourceView*> nullSRV;
+		m_pD3dImmediateContext->VSSetShader(RenderTargetView::m_DeferredVS->GetShader<ID3D11VertexShader>(), nullptr, 0);
 
-	nullSRV.resize(srvs.size(), nullptr);
+		std::vector<ID3D11ShaderResourceView**> srvs =
+		{
+			m_RTVs[1]->GetSRVR(),
+			m_RTVs[2]->GetSRVR(),
+			//m_RTVs[3]->GetSRVR(),
+			m_pDepthStencilView->GetSRVR(),
+			m_RTVs[4]->GetSRVR(),
+			m_RTVs[5]->GetSRVR(),
+			m_pSkyBox->m_BRDFTextrue->GetSRVR(),
+			m_pSkyBox->m_IrradianceTextrue->GetSRVR(),
+			m_pSkyBox->m_SkyBoxTextrue->GetSRVR()
+		};
 
+		std::vector<ID3D11ShaderResourceView*> nullSRV;
 
-	if (m_bOnOffSSAO)
-	{
-		m_pD3dImmediateContext->PSSetShaderResources(0, static_cast<UINT>(srvs.size()), nullSRV.data());
-	}
-	else
-	{
-		m_pD3dImmediateContext->PSSetShaderResources(0, static_cast<UINT>(srvs.size()), nullSRV.data());
+		Light_CB cb;
+		cb.IBLFactor = m_fIBLFactor;
+		m_pLightManager->UpdateLightBuffer(&cb, srvs);
+
+		std::vector<CBBase*> cbs =
+		{
+			&cb
+		};
+
+		if (m_bOnOffSSAO)
+		{
+			m_pSSAO->GetSSAOMap();
+			srvs[5] = m_RTVs[6]->GetSRVR();
+			RenderTargetView::m_DeferredSSAOPS->Update(cbs.data(), srvs);
+			m_pD3dImmediateContext->PSSetShader(RenderTargetView::m_DeferredSSAOPS->GetShader<ID3D11PixelShader>(), nullptr, 0);
+		}
+		else
+		{
+			RenderTargetView::m_DeferredPS->Update(cbs.data(), srvs);
+			m_pD3dImmediateContext->PSSetShader(RenderTargetView::m_DeferredPS->GetShader<ID3D11PixelShader>(), nullptr, 0);
+		}
+
+		m_pD3dImmediateContext->DrawIndexed(6, 0, 0);
+
+		EndEvent();
+
+		nullSRV.resize(srvs.size(), nullptr);
+
+		if (m_bOnOffSSAO)
+		{
+			m_pD3dImmediateContext->PSSetShaderResources(0, static_cast<UINT>(srvs.size()), nullSRV.data());
+		}
+		else
+		{
+			m_pD3dImmediateContext->PSSetShaderResources(0, static_cast<UINT>(srvs.size()), nullSRV.data());
+		}
 	}
 
 	ID3D11RenderTargetView* rtvNull[5] = { nullptr, };
@@ -1187,21 +1237,37 @@ void TLGraphicsEngine::GraphicsEngine::MRTRender()
 
 	if (m_pProjecedTexturePass != nullptr && m_needRecoredDepth)
 	{
-		m_pProjecedTexturePass->RecordDepth(m_RTVs[3]);
+		BeginEvent(TEXT("Projector Pass"));
+
+		//m_pProjecedTexturePass->RecordDepth(m_RTVs[3]);
+		m_pProjecedTexturePass->RecordDepth(m_pDepthStencilView);
 		m_pProjecedTexturePass->SetPass(m_RTVs[4], m_RTVs[0]);
+
+		EndEvent();
 	}
 
+	BeginEvent(TEXT("Post Process Pass"));
 	// PostProcess Pass
 	RenderTargetView* setEffectRTV = m_pPostProcess->PostProcessPass(m_RTVs[0], m_RTVs[7]);
 
-	m_pPostProcess->AddOutLine(m_RTVs[7], m_RTVs[0]);
+	BeginEvent(TEXT("Outline Add"));
 
-	RenderToMain(m_RTVs[0]);
+	//m_pPostProcess->AddOutLine(m_RTVs[7], m_RTVs[0]);
+	//m_pPostProcess->AddOutLine(setEffectRTV, m_RTVs[7]);
+
+	EndEvent();
+
+	EndEvent();
+
+	//RenderToMain(m_RTVs[0]);
+	RenderToMain(setEffectRTV);
 }
 
 void TLGraphicsEngine::GraphicsEngine::RenderToMain(RenderTargetView* rtv)
 {
 	const float color[4] = {};
+
+	BeginEvent(TEXT("Final Pass"));
 
 	m_pD3dImmediateContext->ClearRenderTargetView(m_pRenderTargetView, &color[0]);
 
@@ -1211,6 +1277,7 @@ void TLGraphicsEngine::GraphicsEngine::RenderToMain(RenderTargetView* rtv)
 
 	m_pRenderer->Render2D(m_pD3dImmediateContext, rtv->GetSRV());
 
+	EndEvent();
 
 
 	if (m_OnOffDebug)
@@ -1358,8 +1425,13 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	solidDesc.CullMode = D3D11_CULL_BACK;
 	solidDesc.FrontCounterClockwise = false;
 	solidDesc.DepthClipEnable = true;
+	solidDesc.DepthBias = 10000.f;
+	solidDesc.SlopeScaledDepthBias = 1.f;
+	solidDesc.DepthBiasClamp = 0.f;
 
 	HR(m_pD3dDevice->CreateRasterizerState(&solidDesc, &m_pSolidRS));
+
+	DX11SetObjectName(m_pSolidRS, "SolidRS");
 
 	D3D11_RASTERIZER_DESC wireframeDesc;
 	ZeroMemory(&wireframeDesc, sizeof(D3D11_RASTERIZER_DESC));
@@ -1369,7 +1441,8 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	wireframeDesc.DepthClipEnable = true;
 
 	HR(m_pD3dDevice->CreateRasterizerState(&wireframeDesc, &m_pWireframeRS));
- 
+
+	DX11SetObjectName(m_pWireframeRS, "WireframeRS");
 
 	D3D11_RASTERIZER_DESC noCullDesc;
 	ZeroMemory(&noCullDesc, sizeof(D3D11_RASTERIZER_DESC));
@@ -1379,17 +1452,21 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 
 	HR(m_pD3dDevice->CreateRasterizerState(&noCullDesc, &m_pNoCullModeRS));
 
+	DX11SetObjectName(m_pNoCullModeRS, "NoCullModeRS");
+
 	D3D11_RASTERIZER_DESC shadowRSDesc;
 	ZeroMemory(&shadowRSDesc, sizeof(D3D11_RASTERIZER_DESC));
 	shadowRSDesc.FillMode = D3D11_FILL_SOLID;
 	shadowRSDesc.CullMode = D3D11_CULL_BACK;
-	shadowRSDesc.FrontCounterClockwise = FALSE;
-	shadowRSDesc.DepthBias = 1000;
-	shadowRSDesc.DepthBiasClamp = 0.f;
+	shadowRSDesc.FrontCounterClockwise = false;
+	shadowRSDesc.DepthBias = 10000.f;
+	shadowRSDesc.DepthBiasClamp = 0.0f;
 	shadowRSDesc.SlopeScaledDepthBias = 1.0f;
 	shadowRSDesc.DepthClipEnable = true;
 
 	HR(m_pD3dDevice->CreateRasterizerState(&shadowRSDesc, &m_pShadowMapRS));
+
+	DX11SetObjectName(m_pShadowMapRS, "ShadowMapRS");
 
 	//
 	// 폰트용 DSS
@@ -1401,6 +1478,9 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	equalsDesc.DepthFunc = D3D11_COMPARISON_LESS;
 
 	HR(m_pD3dDevice->CreateDepthStencilState(&equalsDesc, &m_NormalDSS));
+
+	DX11SetObjectName(m_NormalDSS, "NormalDSS");
+
 	//
 	// 일반 DSS
 	//
@@ -1423,6 +1503,9 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	nsDesc.BackFace.StencilPassOp = D3D11_STENCIL_OP_REPLACE;
 	nsDesc.BackFace.StencilFunc = D3D11_COMPARISON_NOT_EQUAL;
 	HR(m_pD3dDevice->CreateDepthStencilState(&nsDesc, &m_Normal_StencilDSS));
+
+	DX11SetObjectName(m_Normal_StencilDSS, "Normal_StencilDSS");
+
 	//Test
 	D3D11_DEPTH_STENCIL_DESC equalsDesc2;
 	ZeroMemory(&equalsDesc2, sizeof(D3D11_DEPTH_STENCIL_DESC));
@@ -1431,6 +1514,8 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	equalsDesc2.DepthFunc = D3D11_COMPARISON_EQUAL;
 
 	HR(m_pD3dDevice->CreateDepthStencilState(&equalsDesc2, &m_Normal_Equal_StencilDSS));
+
+	DX11SetObjectName(m_Normal_Equal_StencilDSS, "Normal_Equal_StencilDSS");
 
 	//
 	// 깊이 체크 Off DSS
@@ -1443,6 +1528,9 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	alwayDesc.DepthFunc = D3D11_COMPARISON_ALWAYS;
 
 	HR(m_pD3dDevice->CreateDepthStencilState(&alwayDesc, &m_OffDepthCheckDSS));
+
+	DX11SetObjectName(m_OffDepthCheckDSS, "OffDepthCheckDSS");
+
 	//
 	// MRT용 DSS
 	//
@@ -1468,6 +1556,8 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 
 	HR(m_pD3dDevice->CreateDepthStencilState(&mrtDesc, &m_MRTDSS));
 
+	DX11SetObjectName(m_MRTDSS, "MRTDSS");
+
 	D3D11_DEPTH_STENCIL_DESC shadowDesc;
 	ZeroMemory(&shadowDesc, sizeof(D3D11_DEPTH_STENCIL_DESC));
 	shadowDesc.DepthEnable = true;
@@ -1487,4 +1577,6 @@ void TLGraphicsEngine::GraphicsEngine::CreateRenderStates()
 	shadowDesc.BackFace.StencilPassOp = D3D11_STENCIL_OP_REPLACE;
 	shadowDesc.BackFace.StencilFunc = D3D11_COMPARISON_EQUAL;
 	HR(m_pD3dDevice->CreateDepthStencilState(&shadowDesc, &m_ShadowDSS));
+
+	DX11SetObjectName(m_ShadowDSS, "ShadowDSS");
 }

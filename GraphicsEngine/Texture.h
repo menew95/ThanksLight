@@ -17,6 +17,7 @@ namespace TLGraphicsEngine
 		~Texture();
 
 	private:
+		ComPtr<ID3D11Resource> m_Resource;
 		ComPtr<ID3D11ShaderResourceView> m_SRV;
 
 	public:

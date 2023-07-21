@@ -28,6 +28,8 @@ namespace TLGraphicsEngine
 		ID3D11DepthStencilView* GetDSV()		{ return m_DSV; }
 		ID3D11DepthStencilView** GetDSVR()		{ return &m_DSV; }
 
+		ID3D11Texture2D* GetBackBuffer()		{ return m_BackBuffer; }
+
 		bool GetUseStencil() { return m_isUseStencil; }
 
 		int GetWidth() { return m_width; }

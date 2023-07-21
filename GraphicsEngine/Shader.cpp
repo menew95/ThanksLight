@@ -355,7 +355,10 @@ bool Shader::CreateShaderBuffer(ID3D11Device* device, D3D11_SHADER_DESC* shaderD
 				shaderBuffer->GetShaderRef());
 
 #ifdef _DEBUG
-			shaderBuffer->GetShaderBuffer()->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(GetName()) - 1, GetName());
+			if (shaderBuffer->GetShaderBuffer() != nullptr)
+			{
+				DX11SetObjectName(static_cast<ID3D11DeviceChild*>(shaderBuffer->GetShaderBuffer()), GetName());
+			}
 #endif // _DEBUG
 
 			m_ShaderBuffer = shared_ptr<ShaderBufferBase>(shaderBuffer);
@@ -372,7 +375,10 @@ bool Shader::CreateShaderBuffer(ID3D11Device* device, D3D11_SHADER_DESC* shaderD
 				shaderBuffer->GetShaderRef());
 
 #ifdef _DEBUG
-			shaderBuffer->GetShaderBuffer()->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(GetName()) - 1, GetName());
+			if (shaderBuffer->GetShaderBuffer() != nullptr)
+			{
+				DX11SetObjectName(static_cast<ID3D11DeviceChild*>(shaderBuffer->GetShaderBuffer()), GetName());
+			}
 #endif // _DEBUG
 
 			m_ShaderBuffer = shared_ptr<ShaderBufferBase>(shaderBuffer);;
@@ -389,7 +395,10 @@ bool Shader::CreateShaderBuffer(ID3D11Device* device, D3D11_SHADER_DESC* shaderD
 				shaderBuffer->GetShaderRef());
 
 #ifdef _DEBUG
-			shaderBuffer->GetShaderBuffer()->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(GetName()) - 1, GetName());
+			if (shaderBuffer->GetShaderBuffer() != nullptr)
+			{
+				DX11SetObjectName(static_cast<ID3D11DeviceChild*>(shaderBuffer->GetShaderBuffer()), GetName());
+			}
 #endif // _DEBUG
 
 			m_ShaderBuffer = shared_ptr<ShaderBufferBase>(shaderBuffer);;
@@ -406,7 +415,10 @@ bool Shader::CreateShaderBuffer(ID3D11Device* device, D3D11_SHADER_DESC* shaderD
 				shaderBuffer->GetShaderRef());
 
 #ifdef _DEBUG
-			shaderBuffer->GetShaderBuffer()->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(GetName()) - 1, GetName());
+			if (shaderBuffer->GetShaderBuffer() != nullptr)
+			{
+				DX11SetObjectName(static_cast<ID3D11DeviceChild*>(shaderBuffer->GetShaderBuffer()), GetName());
+			}
 #endif // _DEBUG
 
 			m_ShaderBuffer = shared_ptr<ShaderBufferBase>(shaderBuffer);;
@@ -423,7 +435,10 @@ bool Shader::CreateShaderBuffer(ID3D11Device* device, D3D11_SHADER_DESC* shaderD
 				shaderBuffer->GetShaderRef());
 
 #ifdef _DEBUG
-			shaderBuffer->GetShaderBuffer()->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(GetName()) - 1, GetName());
+			if (shaderBuffer->GetShaderBuffer() != nullptr)
+			{
+				DX11SetObjectName(static_cast<ID3D11DeviceChild*>(shaderBuffer->GetShaderBuffer()), GetName());
+			}
 #endif // _DEBUG
 
 			m_ShaderBuffer = shared_ptr<ShaderBufferBase>(shaderBuffer);;
@@ -440,7 +455,10 @@ bool Shader::CreateShaderBuffer(ID3D11Device* device, D3D11_SHADER_DESC* shaderD
 				shaderBuffer->GetShaderRef());
 
 #ifdef _DEBUG
-			shaderBuffer->GetShaderBuffer()->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(GetName()) - 1, GetName());
+			if (shaderBuffer->GetShaderBuffer() != nullptr)
+			{
+				DX11SetObjectName(static_cast<ID3D11DeviceChild*>(shaderBuffer->GetShaderBuffer()), GetName());
+			}
 #endif // _DEBUG
 
 			m_ShaderBuffer = shared_ptr<ShaderBufferBase>(shaderBuffer);;

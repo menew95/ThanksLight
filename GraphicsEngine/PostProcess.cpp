@@ -98,24 +98,37 @@ TLGraphicsEngine::RenderTargetView* TLGraphicsEngine::PostProcess::PostProcessPa
 
 	if (m_bOnOffBlur)
 	{
+		GraphicsEngine::Instance()->BeginEvent(TEXT("Blur Pass"));
+
 		Blur(currSRV, currRTV);
 
 		std::swap(currSRV, currRTV);
+
+		GraphicsEngine::Instance()->EndEvent();
 	}
 
 	if (m_bOnOffBloom)
 	{
+		GraphicsEngine::Instance()->BeginEvent(TEXT("Bloom Pass"));
+
 		Bloom(currSRV, currRTV);
 
 		std::swap(currSRV, currRTV);
+
+		GraphicsEngine::Instance()->EndEvent();
 	}
 
 	if (m_bOnOffToneMapping)
 	{
+		GraphicsEngine::Instance()->BeginEvent(TEXT("Tone Map Pass"));
 		ToneMap(currSRV, currRTV);
 
-		//std::swap(currSRV, currRTV);
+		std::swap(currSRV, currRTV);
+
+		GraphicsEngine::Instance()->EndEvent();
 	}
+
+	AddOutLine(currSRV, currRTV);
 
 	if (!m_bOnOffBlur && !m_bOnOffBloom && !m_bOnOffToneMapping)
 	{
@@ -497,8 +510,8 @@ void TLGraphicsEngine::PostProcess::AddSampling(ID3D11DeviceContext* deviceConte
 void TLGraphicsEngine::PostProcess::UnBindResource(ID3D11DeviceContext* deviceContext, int srvCnt, int rtvCnt)
 {
 	std::vector<ID3D11ShaderResourceView*> _nullSRV(srvCnt, nullptr);
-	deviceContext->PSSetShaderResources(0, srvCnt, &_nullSRV[0]);
+	deviceContext->PSSetShaderResources(0, srvCnt, _nullSRV.data());
 
 	std::vector<ID3D11RenderTargetView*> rtvNull(rtvCnt, nullptr);
-	deviceContext->OMSetRenderTargets(rtvCnt, &rtvNull[0], nullptr);
+	deviceContext->OMSetRenderTargets(rtvCnt, rtvNull.data(), nullptr);
 }

@@ -164,7 +164,7 @@ bool TLGraphicsEngine::SamplerState::CreateSamplers(ID3D11Device* device, D3D11_
 	HRESULT hr = device->CreateSamplerState(desc, &newSamplerState);
 
 #ifdef _DEBUG
-	newSamplerState->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(samplerName.c_str()) - 1, samplerName.c_str());
+	DX11SetObjectName(newSamplerState, samplerName.c_str());
 #endif // _DEBUG
 
 	if (SUCCEEDED(hr))

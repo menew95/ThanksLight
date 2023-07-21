@@ -87,7 +87,6 @@ float4 Forward_PS_Light(Foward_VS_OUT input) : SV_TARGET
 
 	float3 normal = input.Normal;
 
-
 	if (material.isUseBumpTex)
 	{
 		float3 normalMapSample = gNormalMap.Sample(samAnisotropicWrap, input.UV).rgb;
@@ -124,7 +123,7 @@ float4 Forward_PS_Light(Foward_VS_OUT input) : SV_TARGET
 	float3 ibl = IBL(albedo.rgb, roughness, metallic, normal, toEye) /* shadows*/;
 
 	_finColor += ibl * IBLFactor;
-	_finColor = pow(_finColor, 1 / 2.2);
+	//_finColor = pow(_finColor, 1 / 2.2);
 
 
 	return float4(_finColor, 1.0f);

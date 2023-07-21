@@ -89,6 +89,11 @@ cbuffer cbBloom : register(b1)
 	float threshold_Max;
 };
 
+cbuffer cbToneMap : register(b1)
+{
+	float g_fHardExposure;
+};
+
 cbuffer cbOutLine : register(b1)
 {
 	float thickNess; // 1

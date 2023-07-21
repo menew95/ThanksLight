@@ -1,10 +1,8 @@
 #pragma once
 
-#include <wrl.h>
+#include "..\ComPtr.h"
 
 #include "..\..\Common\Object.h"
-
-using namespace Microsoft::WRL;
 
 namespace TLGraphicsEngine
 {

@@ -3,6 +3,8 @@
 struct ID3D11Device;
 struct ID3D11DeviceContext;
 
+#include "ComPtr.h"
+
 namespace TLGraphicsEngine
 {
 	/// <summary>

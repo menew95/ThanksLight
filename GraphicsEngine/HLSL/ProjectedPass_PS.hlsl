@@ -32,18 +32,21 @@ float4 ProjectedPass_PS(PS_IN input) : SV_TARGET
 	projectedH.x = projectedH.x * 0.5 + 0.5;
 	projectedH.y = -projectedH.y * 0.5 + 0.5;
 
-	float shadows = 1.0f;
+	float projectorFactor = 1.0f;
 	if (saturate(projectedH.x) == projectedH.x && saturate(projectedH.y) == projectedH.y)
 	{
 		float4 projectedColor = float4(0,0,0,0); 
 
-		shadows = CalcShadowFactor2(samLinearClamp, ProjectedDepth, float3(projectedH.xyz));
+		projectorFactor = CalcProjectorFactor(samLinearClamp, ProjectedDepth, float3(projectedH.xyz));
+		//shadows = CalcShadowFactor(samShadow, ProjectedDepth, float3(projectedH.xyz));
+
+		clip(projectorFactor < 1 ? -1 : 1);
 
 		projectedColor += ProjectedTexture.Sample(samLinearClamp, projectedH.xy);
 
-		clip(shadows < 1 ? -1 : 1);
 		clip(projectedColor.a == 0 ? -1 : 1);
-		projectedColor *= shadows;
+
+		projectedColor *= projectorFactor;
 
 		//clip(projectedColor.a == 0 ? -1 : 1);
 

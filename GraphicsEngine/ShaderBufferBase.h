@@ -5,6 +5,7 @@
 
 struct  ID3D11VertexShader;
 struct ID3D11DeviceContext;
+
 namespace TLGraphicsEngine
 {
 	/// <summary>

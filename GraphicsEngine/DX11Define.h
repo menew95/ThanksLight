@@ -21,7 +21,7 @@
 ///----------------------------------------
 #define _XM_NO_INTRINSICS_
 
-#include <d3d11.h>
+#include <d3d11_1.h>
 #include <dxgi.h>
 #include <DirectXMath.h>
 #include <DirectXPackedVector.h>

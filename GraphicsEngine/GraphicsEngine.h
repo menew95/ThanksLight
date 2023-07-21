@@ -2,6 +2,7 @@
 
 #include "Export/IGraphicsEngine.h"
 #include "DX11Define.h"
+#include "ComPtr.h"
 
 using namespace DirectX;
 class DXTKFont;
@@ -135,6 +136,7 @@ namespace TLGraphicsEngine
 		bool m_gizmo = false;
 		bool m_mrt = false;
 		bool m_postProcess = false;
+
 	public:
 		void CreateMeshBuffer(std::shared_ptr<Mesh> mesh);
 
@@ -175,6 +177,11 @@ namespace TLGraphicsEngine
 		int GetClientHeight() { return m_ClientHeight; }
 
 		float GetAspectRatio() { return static_cast<float>(m_ClientWidth) / m_ClientHeight; }
+
+		void BeginEvent(const wchar_t* event);
+
+		void EndEvent();
+
 	private:
 
 		void DrawText(int x, int y, float r, float g, float b, float a, TCHAR* pch, ...);
@@ -202,6 +209,9 @@ namespace TLGraphicsEngine
 
 		ID3D11Device* m_pD3dDevice = nullptr;
 		ID3D11DeviceContext* m_pD3dImmediateContext = nullptr;
+
+		ComPtr<ID3DUserDefinedAnnotation> m_User = nullptr;
+
 		IDXGISwapChain* m_pSwapChain = nullptr;
 		ID3D11RenderTargetView* m_pRenderTargetView = nullptr;
 		std::vector<RenderTargetView*>	m_RTVs;

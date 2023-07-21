@@ -5,7 +5,7 @@ struct ID3D11DeviceContext;
 namespace TLGraphicsEngine
 {
 	class RenderTargetView;
-	class DepthStencil;
+	class DepthStencilView;
 
 	class ProjectedTexture
 	{
@@ -31,7 +31,8 @@ namespace TLGraphicsEngine
 		XMFLOAT4X4 GetMatrix() { return m_cameraViewProj;  }
 
 		RenderTargetView* GetRenderTargetView() { return m_renderTargetView; }
-		RenderTargetView* GetDepthStencilView() { return m_depth; }
+		//RenderTargetView* GetDepthStencilView() { return m_depth; }
+		DepthStencilView* GetDepthStencilView() { return m_depth; }
 
 		void Reset();
 	private:
@@ -40,6 +41,7 @@ namespace TLGraphicsEngine
 		bool m_onOff = false;
 		XMFLOAT4X4 m_cameraViewProj;
 		RenderTargetView* m_renderTargetView;
-		RenderTargetView* m_depth;
+		//RenderTargetView* m_depth;
+		DepthStencilView* m_depth;
 	};
 }

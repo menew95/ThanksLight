@@ -45,10 +45,14 @@ void TLGraphicsEngine::Light::BuildShadowMap()
 	{
 		m_shadowMapDepthStencil = new DepthStencilView;
 	}
+
+#if defined(_DEBUG)
 	if (!m_shadowMapRenderTarget)
 	{
 		m_shadowMapRenderTarget = new RenderTargetView;
 	}
+#endif
+
 	int width = GraphicsEngine::Instance()->GetClientWidth();
 
 	switch (m_eLightType)
@@ -267,8 +271,8 @@ void TLGraphicsEngine::Light::BindShadowMap(ID3D11DeviceContext* deviceContext)
 
 	deviceContext->RSSetViewports(1, &m_ShadowMapViewPort);
 	deviceContext->OMSetDepthStencilState(nullptr, 0);
-	ID3D11RenderTargetView* rtv[1] = { 0 };
-	deviceContext->OMSetRenderTargets(1, &rtv[0], m_shadowMapDepthStencil->GetDSV());
+	ID3D11RenderTargetView* rtv[1] = { nullptr };
+	deviceContext->OMSetRenderTargets(1, rtv, m_shadowMapDepthStencil->GetDSV());
 
 	deviceContext->ClearDepthStencilView(m_shadowMapDepthStencil->GetDSV(), D3D11_CLEAR_DEPTH, 1.0f, 0);
 }

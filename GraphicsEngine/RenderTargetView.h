@@ -45,6 +45,8 @@ namespace TLGraphicsEngine
 		ID3D11ShaderResourceView*	GetSRV()	{ return m_SRV; }
 		ID3D11ShaderResourceView**	GetSRVR()	{ return &m_SRV; }
 
+		ID3D11Texture2D* GetBackBuffer()		{ return m_BackBuffer; }
+
 		UINT GetWidth() { return m_Width; }
 		UINT GetHeight() { return m_Height; }
 

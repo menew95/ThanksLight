@@ -1,9 +1,8 @@
 #pragma once
 
-#include <wrl.h>
+#include "ComPtr.h"
 
 struct ID3D11SamplerState;
-using namespace Microsoft::WRL;
 
 namespace TLGraphicsEngine
 {

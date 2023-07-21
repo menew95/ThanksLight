@@ -54,6 +54,7 @@ void TLGraphicsEngine::RenderTargetView::OnResize(UINT width /*= 0*/, UINT heigh
 	textureDesc.BindFlags = D3D11_BIND_SHADER_RESOURCE | D3D11_BIND_RENDER_TARGET;
 	textureDesc.SampleDesc.Count = 1;
 	HR(GraphicsEngine::Instance()->GetDevice()->CreateTexture2D(&textureDesc, NULL, &m_BackBuffer));
+
 #ifdef _DEBUG
 	m_BackBuffer->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof("RenderTargetView::m_BackBuffer") - 1, "RenderTargetView::m_BackBuffer");
 #endif

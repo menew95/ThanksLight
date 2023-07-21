@@ -204,6 +204,7 @@ xcopy "$(SolutionDir)$(Platform)\$(Configuration)\*.cso" "$(SolutionDir)Output\R
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="BufferBase.h" />
+    <ClInclude Include="ComPtr.h" />
     <ClInclude Include="ComputeShaderBuffer.h" />
     <ClInclude Include="ConstBuffer.h" />
     <ClInclude Include="ConstBufferDataInfo.h" />
@@ -215,6 +216,7 @@ xcopy "$(SolutionDir)$(Platform)\$(Configuration)\*.cso" "$(SolutionDir)Output\R
     <ClInclude Include="Device.h" />
     <ClInclude Include="DomainShaderBuffer.h" />
     <ClInclude Include="DX11Define.h" />
+    <ClInclude Include="DX11Utilitys.h" />
     <ClInclude Include="dxerr.h" />
     <ClInclude Include="DXTKFont.h" />
     <ClInclude Include="EngineCamera.h" />
@@ -291,6 +293,7 @@ xcopy "$(SolutionDir)$(Platform)\$(Configuration)\*.cso" "$(SolutionDir)Output\R
     <ClCompile Include="Device.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="DomainShaderBuffer.cpp" />
+    <ClCompile Include="DX11Utilitys.cpp" />
     <ClCompile Include="dxerr.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>

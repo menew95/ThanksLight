@@ -19,7 +19,7 @@ BufferBase(name, bindPoint, bindCnt, size, RegisterType::ConstBuffer)
 		&m_Buffer);
 
 #ifdef _DEBUG
-	m_Buffer->SetPrivateData(WKPDID_D3DDebugObjectName, sizeof(name) - 1, name);
+	DX11SetObjectName(m_Buffer.Get(), name);
 #endif // _DEBUG
 }
 

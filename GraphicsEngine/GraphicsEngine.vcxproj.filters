@@ -134,6 +134,9 @@
     <Filter Include="Math">
       <UniqueIdentifier>{b3a7f74b-3cf9-41f3-8c6e-d32b3c444173}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GraphicsEngine\Utility">
+      <UniqueIdentifier>{d6461522-1e32-43d3-8d75-c27628c51aef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Export\IGraphicsEngine.h">
@@ -331,6 +334,12 @@
     <ClInclude Include="Vector.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="DX11Utilitys.h">
+      <Filter>GraphicsEngine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ComPtr.h">
+      <Filter>GraphicsEngine\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -500,6 +509,9 @@
     </ClCompile>
     <ClCompile Include="Deferred_Pass.cpp">
       <Filter>GraphicsEngine\Deferred_Pass</Filter>
+    </ClCompile>
+    <ClCompile Include="DX11Utilitys.cpp">
+      <Filter>GraphicsEngine\Utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

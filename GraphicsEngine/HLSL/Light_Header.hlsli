@@ -60,25 +60,49 @@ float CalcShadowFactor(SamplerComparisonState samShadow,
 	return percentLit /= 9.0f;
 }
 
-float CalcShadowFactor2(SamplerState samShadow,
-	Texture2D shadowMap,
-	float3 shadowPosH)
+//float CalcProjectorFactor(SamplerState samShadow,
+//	Texture2D shadowMap,
+//	float3 shadowPosH)
+//{
+//	// Depth in NDC space.
+//	float depth = shadowPosH.z - 0.001;
+//
+//	float percentLit = 0.0f;
+//
+//	for (int i = 0; i < 9; ++i)
+//	{
+//		float temp = shadowMap.Sample(samShadow, shadowPosH.xy, offset[i]).r;
+//
+//		if (depth <= temp)
+//		{
+//			percentLit += 1;
+//		}
+//		/*percentLit += shadowMap.SampleCmpLevelZero(samShadow,
+//			shadowPosH.xy, depth, offset[i]).r;*/
+//	}
+//
+//	return percentLit /= 9.0f;
+//}
+
+float CalcProjectorFactor(SamplerState samShadow,
+	Texture2D depthMap,
+	float3 projectPosH)
 {
 	// Depth in NDC space.
-	float depth = shadowPosH.z - 0.001;
+	float depth = projectPosH.z - 0.001;
 
 	float percentLit = 0.0f;
 
+	[unroll]
 	for (int i = 0; i < 9; ++i)
 	{
-		float temp = shadowMap.Sample(samShadow, shadowPosH.xy, offset[i]).r;
+		float depth2 = depthMap.Sample(samShadow, projectPosH.xy, offset[i]).r;
 
-		if (depth <= temp)
+		[flatten]
+		if (depth <= depth2)
 		{
 			percentLit += 1;
 		}
-		/*percentLit += shadowMap.SampleCmpLevelZero(samShadow,
-			shadowPosH.xy, depth, offset[i]).r;*/
 	}
 
 	return percentLit /= 9.0f;

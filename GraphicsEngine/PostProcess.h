@@ -37,7 +37,6 @@ namespace TLGraphicsEngine
 
 		Shader* m_CurrEffect = nullptr;
 
-		RenderTargetView* m_TargetSRV = nullptr;
 		RenderTargetView* m_TargetRTV = nullptr;
 
 		std::vector<RenderTargetView*> m_DownSamplings;
